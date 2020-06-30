@@ -1,36 +1,25 @@
 <template>
-  <div id="app" class="App">
+  <div id="app">
     <keep-alive>
       <router-view v-if="$route.meta.keepAlive"/>
     </keep-alive>
     <router-view v-if="!$route.meta.keepAlive"/>
   </div>
 </template>
-<script lang="ts">
-  import { Vue } from 'vue-property-decorator';
+<script>
 
-  export default class App extends Vue {
+import { Vue, Component } from 'vue-property-decorator'
 
-    created() {
-      //
-    }
-
-    activated() {
-      //
-    }
-
-    mounted() {
-      // 加载完成后调用
-      this.init();
-    }
-
-    init() {
-      console.log('欢迎进入该系统');
-      document.documentElement.style.fontSize =
-        document.documentElement.clientWidth / 7.5 + 'px';
-    }
-
+@Component({})
+export default class App extends Vue {
+  mounted() {
+    this.init()
   }
+    init() {
+      document.documentElement.style.fontSize =
+        document.documentElement.clientWidth / 7.5 + "px";
+    }
+}
 </script>
 <style lang="scss">
   #app {

@@ -1,6 +1,6 @@
 <template>
   <div class="game-wrap">
-    {{data.componentName}}
+    {{data.componentName+JSON.stringify((mine))}}
   </div>
 </template>
 
@@ -12,6 +12,8 @@
 
   @Component({})
   export default class About extends Vue {
+    // getter
+    @Getter mine: any
     // prop
     @Prop({
       required: false,
@@ -26,13 +28,14 @@
     created() {
       //
     }
-    
+
     activated() {
       //
     }
 
     mounted() {
       //
+      console.log(this.mine)
     }
 
   }

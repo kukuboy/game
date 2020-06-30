@@ -3,13 +3,14 @@ import App from '@/App.vue';
 import router from '@/router';
 import store from '@/store';
 import "@/assets/scss/common.scss"
-import { Button, Form, Field  } from 'vant';
+import { Button, Form, Field, Toast  } from 'vant';
 
 Vue.config.productionTip = false;
 
 Vue.use(Form)
 Vue.use(Button)
 Vue.use(Field)
+Vue.use(Toast)
 new Vue({
   router,
   store,

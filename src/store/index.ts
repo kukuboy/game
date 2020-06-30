@@ -1,16 +1,16 @@
-/**
- * @author 水印红枫
- * @date 2020/6/30 8:55
- * @Description:
- */
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+// modules
+import Login from './module/login'
+import Index from './module/index'
+
+
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    //
+    mine: {}
   },
   mutations: {
     //
@@ -20,5 +20,7 @@ export default new Vuex.Store({
   },
   modules: {
     //
+    Login,
+    Index
   }
 })

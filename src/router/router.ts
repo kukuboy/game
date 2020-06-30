@@ -19,5 +19,15 @@ export default [
       keepAlive: true,
       title: 'login'
     }
+  },
+  {
+    path: '/game',
+    name: 'game',
+    component: () => import('@/components/game/game.vue'),
+    meta: {
+      icon: '',
+      keepAlive: true,
+      title: 'game'
+    }
   }
 ]

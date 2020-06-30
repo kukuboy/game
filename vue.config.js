@@ -86,18 +86,11 @@ module.exports = {
     open: false,
     hotOnly: false,
     proxy: {
-      '/zxfw3': {
-        target: 'http://125.46.87.138:9804',
+      '/gameJava': {
+        target: 'http://localhost:8989',
         changeOrigin: true,
         pathRewrite: {
-          '^/zxfw3': '/zxfw3'
-        }
-      },
-      '/lukydraw': {
-        target: 'http://10.3.218.247:8889',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/lukydraw': '/lukydraw'
+          '^/gameJava': '/gameJava_war_exploded'
         }
       },
       // '/lukydraw': {

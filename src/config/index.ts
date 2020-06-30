@@ -6,12 +6,12 @@
 /**
  * 线上环境
  */
-export const ONLINEHOST: string = 'http://182.92.207.81:8989'
+export const ONLINEHOST: string = 'http://182.92.207.81:8989/gameJava'
 
 /**
  * 测试环境
  */
-export const QAHOST: string = 'localhost:8989'
+export const QAHOST: string = '/gameJava'
 
 /**
  * 线上mock
@@ -21,7 +21,7 @@ export const MOCKHOST: string = 'http://xxx.com'
 /**
  * 是否mock
  */
-export const ISMOCK: boolean = true
+export const ISMOCK: boolean = false
 
 /**
  * 当前的host  ONLINEHOST | QAHOST | MOCKHOST
