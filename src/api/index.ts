@@ -9,4 +9,7 @@ export const loginIn = (data: object, methods: string = 'GET') => {
 export const getPower = (data: object, methods: string = 'GET') => {
   return Api.getPower(data, methods)
 }
+export const getLevel = (data: object, methods: string = 'GET') => {
+  return Api.getLevel(data, methods)
+}
 

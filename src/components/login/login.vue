@@ -31,14 +31,14 @@
 <script lang="ts">
   import {Component, Vue, Prop} from 'vue-property-decorator';
   import {Getter, Action} from 'vuex-class';
-  import {LoginData} from '@/types/components/login.interface';
+  import {LoginData, LoginState} from '@/types/components/login.interface';
   // import {  } from "@/components" // 组件
   import {loginIn, getPower} from '@/api';
 
 
   @Component({})
   export default class About extends Vue {
-    @Action UPDATE_STATE_ASYN: any
+    @Action UPDATE_STATE_ASYN: any;
     // prop
     @Prop({
       required: false,
@@ -52,7 +52,7 @@
     email: string = '';
     password: string = '';
     myId: number | undefined;
-    mine: object | undefined;
+    mine: LoginState | undefined;
 
     created() {
       //
@@ -84,8 +84,8 @@
         id: this.myId
       }, 'POST').then((data: { flag: number; data: object | undefined; }) => {
         if (data.flag === 0) {
-          this.mine = data.data;
-          this.UPDATE_STATE_ASYN('mine', data.data);
+          this.mine = {login: {mine: data.data}};
+          this.$store.dispatch('UPDATE_STATE_ASYN', this.mine);
           this.$router.push({
             name: 'game'
           });

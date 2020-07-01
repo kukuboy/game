@@ -4,7 +4,8 @@ import * as LoginApi from '@/api/login';
 
 const state: LoginState = {
   login: {
-    author: undefined
+    author: undefined,
+    mine: undefined
   }
 };
 

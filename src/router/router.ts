@@ -28,6 +28,18 @@ export default [
       icon: '',
       keepAlive: true,
       title: 'game'
-    }
+    },
+    children: [
+      {
+        path: '/gameHome',
+        name: 'gameHome',
+        component: () => import('@/components/gameHome/gameHome.vue'),
+        meta: {
+          icon: '',
+          keepAlive: true,
+          title: '首页'
+        }
+      }
+    ]
   }
-]
+];
