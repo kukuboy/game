@@ -1,6 +1,6 @@
 <template>
   <div class="game-wrap">
-    <router-view/>
+    <router-view />
     <van-tabbar v-model="active">
       <van-tabbar-item name="gameHome" :badge=badgeOne>
         <span>首页</span>
@@ -45,7 +45,7 @@
     // 监听数据
     @Watch('active', {
       deep: true,
-      immediate: true
+      immediate: false
     })
     pageChange() {
       this.$router.push({
@@ -75,8 +75,8 @@
   .game-wrap {
     position: absolute;
     width: 100%;
-    height: 100%;
-    padding-bottom: 50px;
+    top: 0;
+    bottom: 50px;
   }
 </style>
 

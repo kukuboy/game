@@ -5,6 +5,14 @@ export interface LoginData {
 
 // VUEX login.State 参数类型
 export interface LoginState {
+  p?: number;
+  money?: number;
+  own?: number;
+  s?: number;
+  t?: number;
+  level?: number;
+
   [x: string]: any;
-  data?: any
+
+  data?: any;
 }

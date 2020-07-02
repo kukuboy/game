@@ -12,4 +12,7 @@ export const getPower = (data: object, methods: string = 'GET') => {
 export const getLevel = (data: object, methods: string = 'GET') => {
   return Api.getLevel(data, methods)
 }
+export const updatePower = (data: object, methods: string = 'GET') => {
+  return Api.updatePower(data, methods)
+}
 

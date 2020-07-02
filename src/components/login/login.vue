@@ -87,7 +87,7 @@
           this.mine = {login: {mine: data.data}};
           this.$store.dispatch('UPDATE_STATE_ASYN', this.mine);
           this.$router.push({
-            name: 'game'
+            name: 'gameHome'
           });
         }
       });

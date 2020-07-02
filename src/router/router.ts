@@ -39,6 +39,16 @@ export default [
           keepAlive: true,
           title: '首页'
         }
+      },
+      {
+        path: '/gameSetting',
+        name: 'gameSetting',
+        component: () => import('@/components/gameSetting/gameSetting.vue'),
+        meta: {
+          icon: '',
+          keepAlive: true,
+          title: '设置'
+        }
       }
     ]
   }
