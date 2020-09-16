@@ -6,7 +6,7 @@
 /**
  * 线上环境
  */
-export const ONLINEHOST: string = 'http://182.92.207.81:8989/gameJava'
+export const ONLINEHOST: string = '/gameJava'
 
 /**
  * 测试环境

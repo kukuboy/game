@@ -49,6 +49,26 @@ export default [
           keepAlive: true,
           title: '设置'
         }
+      },
+      {
+        path: '/cav',
+        name: 'cav',
+        component: () => import('@/components/cav/cav.vue'),
+        meta: {
+          icon: '',
+          keepAlive: true,
+          title: '设置'
+        }
+      },
+      {
+        path: '/music',
+        name: 'music',
+        component: () => import('@/components/music/music.vue'),
+        meta: {
+          icon: '',
+          keepAlive: true,
+          title: '音乐'
+        }
       }
     ]
   }

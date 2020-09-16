@@ -1,6 +1,6 @@
 <template>
   <div class="game-wrap">
-    <router-view />
+    <router-view/>
     <van-tabbar v-model="active">
       <van-tabbar-item name="gameHome" :badge=badgeOne>
         <span>首页</span>
@@ -8,6 +8,8 @@
           <img :src="props.active ? icon.active : icon.inactive"/>
         </template>
       </van-tabbar-item>
+      <van-tabbar-item name="music" :badge=badgeMusic icon="volume-o">键盘乐</van-tabbar-item>
+      <van-tabbar-item name="cav" :badge=badgeCav icon="volume-o">贪吃蛇</van-tabbar-item>
       <van-tabbar-item name="gameSetting" :badge=badgeTwo icon="setting-o">设置</van-tabbar-item>
     </van-tabbar>
   </div>
@@ -37,6 +39,7 @@
     active: string = 'gameHome';
     badgeOne: string = '';
     badgeTwo: string = '';
+    badgeMusic: string = '';
     icon: IconData = {
       active: 'https://img.yzcdn.cn/vant/user-active.png',
       inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',

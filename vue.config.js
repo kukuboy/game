@@ -3,22 +3,23 @@
  * @date 2020/6/30 9:11
  * @Description:
  */
-const merge = require("webpack-merge");
-const tsImportPluginFactory = require("ts-import-plugin");
+const merge = require('webpack-merge');
+const tsImportPluginFactory = require('ts-import-plugin');
 module.exports = {
   // 基本路径
   // baseUrl: process.env.NODE_ENV === 'production' ? '' : '',
   // 更改路径，解决空白
-  publicPath:'./',
+  publicPath: '/game/',
   // 输出文件目录
   outputDir: 'dist', // 默认dist
   // 用于嵌套生成的静态资产（js,css,img,fonts）目录
   // assetsDir: '',
   // 指定生成的 index.html 的输出路径 (相对于 outputDir)。也可以是一个绝对路径
   indexPath: 'index.html', // Default: 'index.html'
-  filenameHashing: true,
+  filenameHashing: false,
   // 构建多页时使用
   pages: undefined,
+  parallel: false,
   // eslint-loader是否在保存的时候检查
   lintOnSave: true,
   // 是否使用包含运行时编译器的Vue核心的构建
@@ -46,22 +47,22 @@ module.exports = {
           return options
         })*/
     config.module
-      .rule("ts")
-      .use("ts-loader")
+      .rule('ts')
+      .use('ts-loader')
       .tap(options => {
         options = merge(options, {
           transpileOnly: true,
           getCustomTransformers: () => ({
             before: [
               tsImportPluginFactory({
-                libraryName: "vant",
-                libraryDirectory: "es",
+                libraryName: 'vant',
+                libraryDirectory: 'es',
                 style: true
               })
             ]
           }),
           compilerOptions: {
-            module: "es2015"
+            module: 'es2015'
           }
         });
         return options;
@@ -86,13 +87,20 @@ module.exports = {
     open: false,
     hotOnly: false,
     proxy: {
+      // '/gameJava': {
+      //   target: 'http://localhost:8989',
+      //   changeOrigin: true,
+      //   pathRewrite: {
+      //     '^/gameJava': '/gameJava_war_exploded'
+      //   }
+      // },
       '/gameJava': {
-        target: 'http://localhost:8989',
+        target: 'http://182.92.207.81:8989',
         changeOrigin: true,
         pathRewrite: {
-          '^/gameJava': '/gameJava_war_exploded'
+          '^/gameJava': '/gameJava'
         }
-      },
+      }
       // '/lukydraw': {
       //     target: 'http://test.ccnew.com.cn:58081',
       //     changeOrigin: true,
@@ -101,7 +109,8 @@ module.exports = {
       //     }
       // }
     },
-    before: app => { },
+    before: app => {
+    }
   },
   // PWA 插件相关配置
   pwa: {},

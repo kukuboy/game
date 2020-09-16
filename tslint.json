@@ -29,6 +29,7 @@
     "no-bitwise": true, //不允许使用按位运算符
     "no-console": false, //不能使用console
     "no-construct": true, //不允许使用 String/Number/Boolean的构造函数
+    "no-console": false, //允许使用console
     "no-debugger": false, //不允许使用debugger
     "no-duplicate-super": true, //构造函数两次用super会发出警告
     "no-empty": true, //不允许空的块

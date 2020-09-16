@@ -12,6 +12,7 @@ Vue.use(Router);
 
 const router = new Router({
   routes,
+  base: '/game/',
   mode: 'history'
 });
 
